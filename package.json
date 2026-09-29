@@ -1,23 +1,13 @@
 {
   "name": "bytespace-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+"private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rika4698/ByteSpace-Website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Rika4698/ByteSpace-Website/issues"
-  },
-  "homepage": "https://github.com/Rika4698/ByteSpace-Website#readme",
   "dependencies": {
     "next": "^16.3.6",
     "react": "^19.2.8",
