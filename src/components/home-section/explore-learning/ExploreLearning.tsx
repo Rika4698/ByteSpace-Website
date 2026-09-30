@@ -6,7 +6,6 @@ import { Heading } from "@/components/ui/Heading";
 type Learning = {
   label: string;
   icon: string;
-  // The SVGs' own sizes from Figma; they differ per icon (all fit a 36px box)
   width: number;
   height: number;
 };
