@@ -89,6 +89,14 @@
 
  }
 
+ @utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.12) 2px, transparent 2px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.12) 2px, transparent 2px);
+  background-size: 120px 120px;
+}
+
+
 @layer base {
   body {
     @apply bg-white font-sans text-neutral-950 antialiased;
