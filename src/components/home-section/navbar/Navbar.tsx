@@ -12,7 +12,7 @@ import { CartIcon } from "@/components/all-icons/CartIcon";
 export function Navbar() {
   return (
     
- 
+     <header className="absolute inset-x-0 top-0 z-50 w-full">
       <Container className="flex h-20 items-center justify-between transition-[height] duration-300 group-data-[scrolled=true]:h-16 motion-reduce:transition-none md:h-30 md:group-data-[scrolled=true]:h-20 ">
         <Link href="/#home">
           <Image
@@ -53,6 +53,6 @@ export function Navbar() {
 
         
       </Container>
-   
+   </header>
   );
 }
