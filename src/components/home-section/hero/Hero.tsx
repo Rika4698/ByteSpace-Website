@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { SearchBar } from "@/components/ui/SearchBar";
 
 
 
@@ -16,7 +17,7 @@ export function Hero() {
           </p>
         </div>
 
-    
+      <SearchBar/>
       </Container>
 
 
