@@ -13,7 +13,7 @@ export function Navbar() {
   return (
     
  
-      <Container className="flex h-20 items-center justify-between transition-[height] duration-300 group-data-[scrolled=true]:h-16 motion-reduce:transition-none md:h-30 md:group-data-[scrolled=true]:h-20 bg-blue-900 container-content">
+      <Container className="flex h-20 items-center justify-between transition-[height] duration-300 group-data-[scrolled=true]:h-16 motion-reduce:transition-none md:h-30 md:group-data-[scrolled=true]:h-20 ">
         <Link href="/#home">
           <Image
             src="./logo/logo-white.svg"
