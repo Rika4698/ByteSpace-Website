@@ -74,8 +74,7 @@ Built on the latest **Next.js (App Router)**, **React 19**, and **Tailwind CSS v
 | **[TypeScript](https://www.typescriptlang.org/)** | Static typing for enterprise stability and developer productivity |
 | **[Tailwind CSS](https://tailwindcss.com/) (v4)** | Next-generation utility-first styling with `@theme` design tokens |
 | **[React Hook Form](https://react-hook-form.com/)** | Flexible and performant form state management |
-| **[Zod](https://zod.dev/)** | TypeScript-first schema validation for forms and inputs |
-| **[Lucide React](https://lucide.dev/)** | Crisp, customizable SVG vector icons |
+| **[Zod](https://zod.dev/)** | TypeScript-first schema validation for forms and inputs | 
 | **[React Hot Toast](https://react-hot-toast.com/)** | Lightweight, animated toast notifications |
 | **[Vercel](https://vercel.com/)** | Cloud platform for automated CI/CD and edge deployment |
 
