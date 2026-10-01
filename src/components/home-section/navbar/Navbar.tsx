@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { NavLinks } from "./NavLinks";
 import { authLinks } from "@/data-info/navigation";
 import { CartIcon } from "@/components/all-icons/CartIcon";
+import { MobileMenu } from "./MobileMenu";
 
 
 
@@ -48,9 +49,10 @@ export function Navbar() {
             <CartIcon  />
           </Link>
 
-          
+           <MobileMenu />
+           
         </div>
-
+         
         
       </Container>
    </header>
