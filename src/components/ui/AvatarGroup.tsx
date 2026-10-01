@@ -2,29 +2,52 @@ import Image from "next/image";
 
 export type Avatar = { src: string; alt: string };
 
+const toneStyles = {
+  lime: "bg-secondary-500 font-bold text-neutral-950",
+  dark: "bg-black font-medium text-white",
+};
+
+
+const sizeStyles = {
+  md: { list: "-space-x-3", item: "size-8", px: 32 },
+  lg: { list: "-space-x-4", item: "size-[43px]", px: 43 },
+};
+
 type AvatarGroupProps = {
   avatars: Avatar[];
+  size?: keyof typeof sizeStyles;
   more?: string;
+  style?: keyof typeof toneStyles;
   className?: string;
 };
 
 
-export function AvatarGroup({ avatars, more, className = "" }: AvatarGroupProps) {
+export function AvatarGroup({
+  avatars,
+  more,
+  style = "lime",
+  size = "md",
+  className = "",
+}: AvatarGroupProps) {
+  const sizes = sizeStyles[size];
+
   return (
-    <ul className={`flex items-center -space-x-2 ${className}`}>
+    <ul className={`flex items-center ${sizes.list} ${className}`}>
       {avatars.map((avatar) => (
-        <li key={avatar.src}>
+        <li key={avatar.src} className="relative shrink-0">
           <Image
             src={avatar.src}
             alt={avatar.alt}
-            width={32}
-            height={32}
-            className="size-8 rounded-full object-cover ring-2 ring-white"
+            width={sizes.px}
+            height={sizes.px}
+            className={`${sizes.item} rounded-full object-cover`}
           />
         </li>
       ))}
       {more && (
-        <li className="flex size-8 items-center justify-center rounded-full bg-secondary-500 text-label-xs font-bold text-neutral-950 ring-2 ring-white">
+        <li
+          className={`relative flex ${sizes.item} shrink-0 items-center justify-center rounded-full text-label-xs ${toneStyles[style]}`}
+        >
           {more}
         </li>
       )}
