@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { FEATURED, courseCategoryRows} from "@/data-info/courses";
+import { FEATURED, courseCategoryRows, courses} from "@/data-info/courses";
+import { Card } from "@/components/ui/Card";
 
 
 const styles =
@@ -14,7 +15,10 @@ const styles =
 export function CategoryTabsCards() {
   const [activeCategory, setActiveCategory] = useState(FEATURED);
 
-
+const allCourses =
+    activeCategory === FEATURED
+      ? courses
+      : courses.filter((course) => course.categories.includes(activeCategory));
 
   return (
     <>
@@ -53,7 +57,25 @@ export function CategoryTabsCards() {
           </ul>
         ))}
       </div>
+ 
+   <p className="sr-only">
+        {allCourses.length} {allCourses.length === 1 ? "course" : "courses"} shown
+      </p>
 
+      {allCourses.length > 0 ? (
+     
+        <ul className="mt-19 grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-3">
+          {allCourses.map((course) => (
+            <li key={course.slug}>
+              <Card course={course} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-19 text-center text-body-l text-neutral-500">
+          No {activeCategory} courses yet. Check back soon.
+        </p>
+      )}
       
 
 
