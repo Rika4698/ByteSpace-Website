@@ -2,11 +2,12 @@
 
 import { redirect } from "next/navigation";
 import { signUpSchema, type SignUpValues } from "@/schema/signUpSchema";
+import { signInSchema, type SignInValues } from "@/schema/signInSchema";
 
 
-export type AuthRedirect = { error: string };
+export type Auth = { error: string };
 
-export async function signUp(values: SignUpValues): Promise<AuthRedirect> {
+export async function signUp(values: SignUpValues): Promise<Auth> {
   const result = signUpSchema.safeParse(values);
   if (!result.success) {
     return { error: "Please check your details and try again." };
@@ -14,4 +15,16 @@ export async function signUp(values: SignUpValues): Promise<AuthRedirect> {
 
   
   redirect("/sign-in");
+}
+
+
+export async function signIn(values: SignInValues): Promise<Auth> {
+ 
+  const result = signInSchema.safeParse(values);
+  if (!result.success) {
+    return { error: "Please check your email and password." };
+  }
+
+ 
+  redirect("/");
 }
