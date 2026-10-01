@@ -3,9 +3,18 @@ import { LevelIcon } from "@/components/all-icons/LevelIcon";
 import { StarIcon } from "@/components/all-icons/StarIcon";
 import { AvatarGroup } from "@/components/ui/AvatarGroup";
 import type { Course } from "@/data-info/courses";
+import { PointedStarIcon } from "../all-icons/PointedStarIcon";
 
 
-export function Card({ course }: { course: Course }) {
+type CardProps = {
+  course: Course;
+  variant?: "default" | "auth";
+  eager?: boolean;
+};
+
+export function Card({ course, variant = "default", eager = false }: CardProps) {
+  const isAuth = variant === "auth";
+
   const pills = [
     { label: `${course.lessons} Lessons` },
     { label: course.duration },
@@ -21,6 +30,7 @@ export function Card({ course }: { course: Course }) {
           src={course.image}
           alt=""
           fill
+          loading={eager ? "eager" : "lazy"}
           sizes="(min-width: 1280px) 341px, (min-width: 640px) 45vw, 100vw"
           className="object-cover"
         />
@@ -51,7 +61,11 @@ export function Card({ course }: { course: Course }) {
           <p className="flex shrink-0 items-center gap-1 text-body-l text-neutral-700">
             <span className="sr-only">Rating:</span>
             {course.rating}
-            <StarIcon className="text-neutral-300" />
+           {isAuth ? (
+              <PointedStarIcon className="text-secondary-400" />
+            ) : (
+              <StarIcon className="text-neutral-200" />
+            )}
           </p>
         </div>
 

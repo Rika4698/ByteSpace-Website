@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {Poppins} from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 
 const poppins = Poppins({
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en"  data-scroll-behavior="smooth"
       className={`${poppins.variable} ${satoshi.variable} scroll-pt-16 motion-safe:scroll-smooth md:scroll-pt-20`}>
       <body>{children}</body>
+       <Toaster position="top-right" />
     </html>
   );
 }

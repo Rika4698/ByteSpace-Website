@@ -7,6 +7,7 @@ type HappyStudentsCardProps = {
   rating: number;
   reviews: number;
   className?: string;
+   variant?: "default" | "auth";
 };
 
  const happyStudents: Avatar[] = [
@@ -21,18 +22,22 @@ type HappyStudentsCardProps = {
 
 
 
-export function HappyStudentsCard({ rating, reviews, className = "" }: HappyStudentsCardProps) {
+export function HappyStudentsCard({ rating, reviews, variant = "default", className = "" }: HappyStudentsCardProps) {
+   const isAuth = variant === "auth";
   return (
-    <FloatingCard className={`w-[258px] ${className}`}>
+    <FloatingCard  style={isAuth ? "lime" : "white"} className={`w-[258px] ${className}`}>
       <div className="">
         <p className="text-label-m font-medium ">Happy Students</p>
         <p className="flex items-center gap-1 text-body-xs text-neutral-500 leading-tight">
           {rating} ({reviews}) <SmallStarIcon
-            className="text-[18px] font-bold text-secondary-400" aria-hidden="true"
+            className={`text-[18px] font-bold ${isAuth ? "text-primary-800" : "text-secondary-400"}`}
           /> 
         </p>
       </div>
-      <AvatarGroup avatars={happyStudents} more="2K+" />
+      <AvatarGroup  avatars={happyStudents}
+        more="2K+"
+        style={isAuth ? "dark" : "lime"}
+        size="lg" />
     </FloatingCard>
   );
 }

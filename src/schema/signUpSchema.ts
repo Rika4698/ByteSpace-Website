@@ -6,8 +6,8 @@ export const signUpSchema = z.object({
     .string()
     .trim()
     .min(1, { message: "Enter your full name" })
-    .min(2, { message: "Name must be at least 2 characters" })
-    .max(20, { message: "Name must be at most 20 characters" }),
+    .min(4, { message: "Name must be at least 4 characters" })
+    .max(16, { message: "Name must be at most 16 characters" }),
 
   email: z
   .string()
@@ -18,7 +18,7 @@ export const signUpSchema = z.object({
   password: z
   .string()
   .min(1, { message: "Enter your password" })
-  .min(8, { message: "Password must be at least 6 characters" }),
+  .min(6, { message: "Password must be at least 6 characters" }),
 });
 
 export type SignUpValues = z.infer<typeof signUpSchema>;
