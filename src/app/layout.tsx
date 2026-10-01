@@ -30,8 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en"  data-scroll-behavior="smooth"
       className={`${poppins.variable} ${satoshi.variable} scroll-pt-16 motion-safe:scroll-smooth md:scroll-pt-20`}>
-      <body>{children}</body>
+      <body>{children}
        <Toaster position="top-right" />
+       </body>
     </html>
   );
 }
