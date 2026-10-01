@@ -21,6 +21,6 @@ export const sectionIds = mainLinks.map((link) => link.sectionId);
 
 // For sign-in, sign-out account
 export const authLinks: NavLink[] = [
-  { label: "Sign In", href: "/login" },
+  { label: "Sign In", href: "/sign-in" },
   { label: "Join Us", href: "/sign-up" },
 ];
