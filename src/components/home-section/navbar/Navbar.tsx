@@ -49,9 +49,10 @@ export function Navbar() {
             <CartIcon  />
           </Link>
 
-          
+           <MobileMenu />
+           
         </div>
-          <MobileMenu />
+         
         
       </Container>
    </header>

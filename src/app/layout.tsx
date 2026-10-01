@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: LayoutProps<"/">) {
+}: { children: React.ReactNode }) {
   return (
     <html lang="en"  data-scroll-behavior="smooth"
       className={`${poppins.variable} ${satoshi.variable} scroll-pt-16 motion-safe:scroll-smooth md:scroll-pt-20`}>
