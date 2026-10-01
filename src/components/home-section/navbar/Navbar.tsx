@@ -24,7 +24,7 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Server-rendered wrapper; only the link list inside is a Client Component */}
+       
         <nav aria-label="Main" className="hidden md:block">
           <NavLinks />
         </nav>

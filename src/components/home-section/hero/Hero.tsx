@@ -42,8 +42,6 @@ export function Hero() {
         width={578}
         height={541}
         sizes="(min-width: 640px) 578px, 100vw"
-        // The page's LCP image: load it right away instead of lazily
-        // (Next 16 docs recommend loading="eager" over preload for this)
         loading="eager"
         fetchPriority="high"
         className="absolute inset-x-0 top-0 h-auto w-full"

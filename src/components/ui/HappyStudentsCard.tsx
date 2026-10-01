@@ -1,5 +1,6 @@
 import { Avatar, AvatarGroup } from "@/components/ui/AvatarGroup";
 import { FloatingCard } from "@/components/ui/FloatingCard";
+import { SmallStarIcon } from "../all-icons/SmallStarIcon";
 
 
 type HappyStudentsCardProps = {
@@ -25,8 +26,10 @@ export function HappyStudentsCard({ rating, reviews, className = "" }: HappyStud
     <FloatingCard className={`w-[258px] ${className}`}>
       <div className="">
         <p className="text-label-m font-medium ">Happy Students</p>
-        <p className="text-body-xs text-neutral-500 leading-tight">
-          {rating} ({reviews}) <span className="text-[18px] font-bold text-secondary-400" aria-hidden="true">★</span>
+        <p className="flex items-center gap-1 text-body-xs text-neutral-500 leading-tight">
+          {rating} ({reviews}) <SmallStarIcon
+            className="text-[18px] font-bold text-secondary-400" aria-hidden="true"
+          /> 
         </p>
       </div>
       <AvatarGroup avatars={happyStudents} more="2K+" />
