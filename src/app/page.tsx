@@ -1,3 +1,4 @@
+import { CourseSection } from "@/components/home-section/courses/CourseSection";
 import { CtaSection } from "@/components/home-section/cta-section/CtaSection";
 import { ExploreLearning } from "@/components/home-section/explore-learning/ExploreLearning";
 import { Footer } from "@/components/home-section/footer/Footer";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar/>
       <Hero/>
       <Sponsors/>
+      <CourseSection/>
       <ExploreLearning/>
       <CtaSection/>
       <Testimonial/>
