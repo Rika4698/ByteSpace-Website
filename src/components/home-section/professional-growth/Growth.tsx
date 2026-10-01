@@ -54,22 +54,22 @@ function GrowthPicture() {
 
   return (
     <div className="relative aspect-[621/552] w-full max-w-[621px] shrink-0">
-      <div className="absolute top-0 left-0  w-[373px] block">
+      <div className="absolute top-0 left-0 w-[373px] hidden md:block">
         <Card course={courses[0]} />
       </div>
 
       <Image
-        src="/student/student-laptop.png"
+        src="/student/growth-student.png"
         alt="Student with headphones holding a laptop"
-        width={577}
-        height={540}
+        width={1158}
+        height={1438}
         sizes="(min-width: 768px) 577px, 93vw"
-        className="absolute top-[2.17%] left-0 h-auto w-[92.9%] mt-16 md:mt-0"
+        className="absolute top-[2.17%] left-0 h-auto w-[107.4%] max-w-none"
       />
 
       <LearningCard
         value={learningProgress}
-        className="absolute top-[38.6%] left-[55.6%] hidden md:flex"
+        className="absolute top-[38.6%] left-[56.6%] hidden md:flex"
       />
 
       <Image
